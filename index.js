@@ -7,12 +7,18 @@
 // console.log(l.name);
 import {franc} from "franc";
 import langs from "langs";
+import color from "colors";
+const input =process.argv[2];
 
-const langCode = franc('HELLO WOLRD HII');
+// const langCode = franc('HELLO WOLRD HII');
+const langCode=franc(input);
+if(langCode==='und')
+{
+    console.log("sorry couldn't figured out try again");
+}
 const language = langs.where("2", langCode);
-
 if (language) {
-    console.log(language.name);
+    console.log(language.name.green);
 } else {
     console.log("Language not found!");
 }
